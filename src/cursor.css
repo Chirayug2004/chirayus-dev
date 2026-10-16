@@ -1,0 +1,21 @@
+
+.cursor-circle {
+    width: 25px;
+    height: 25px;
+  
+    border: 2px solid #a3ff72;
+    border-radius: 50%;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+  
+    transition:
+      left 0.12s ease-out,
+      top 0.12s ease-out;
+  }
+  
