@@ -1,0 +1,22 @@
+
+:root {
+    --chat--color-primary: #8b5cf6;
+    --chat--color-primary-shade-50: #7c3aed;
+    --chat--color-primary-shade-100: #6d28d9;
+    --chat--color-secondary: #18181b;
+    --chat--color-white: #ffffff;
+    --chat--color-light: #f4f4f5;
+    --chat--window--width: 380px;
+    --chat--window--height: 560px;
+    --chat--border-radius: 18px;
+    --chat--header--background: #111113;
+    --chat--header--color: #ffffff;
+    --chat--message--bot--background: #27272a;
+    --chat--message--bot--color: #ffffff;
+    --chat--message--user--background: #8b5cf6;
+    --chat--message--user--color: #ffffff;
+    --chat--toggle--background: #8b5cf6;
+    --chat--toggle--hover--background: #7c3aed;
+    --chat--toggle--size: 60px;
+  }
+  
