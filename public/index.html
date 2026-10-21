@@ -20,5 +20,12 @@
 	<div id="root"></div>
 
 </body>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
+	createChat({
+		webhookUrl: 'http://localhost:5678/webhook/db4ba283-32ff-4651-9ab1-1c88f5c4ced3/chat'
+	});
+</script>
 </html>
