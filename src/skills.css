@@ -1,0 +1,30 @@
+.skillTitle-sec h4 {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #a3ff68;
+    border: 1px solid #cbffa94a;
+    border-radius: 20px;
+}
+
+.skillTitle-sec h2 {
+    font-size: 70px;
+    margin-bottom: 55px;
+}
+
+.skill-card {
+    place-content: center;
+    place-items: center;
+    padding: 40px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgb(255 255 255 / 18%);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #cbffa94a;
+}
+
+.skill-card h4 {
+    text-align: center;
+    color: #a3ff68;
+}

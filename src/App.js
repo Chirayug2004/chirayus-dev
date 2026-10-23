@@ -4,9 +4,11 @@ import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "motion/react";
 import "../src/App.css"
 import "../src/styles.css"
+import "../src/skills.css"
 import Cursor from "./cursor";
 import Chatbot from "./Chatbot";
 import Services from "./Services";
+import Skills from "./Skills";
 
 
 function Navbar() {
@@ -93,8 +95,8 @@ function Hero() {
       </div> */}
 
       <div className="my-img">
-          {/* <img src="../images/my-img.png" /> */}
-          <motion.img 
+        {/* <img src="../images/my-img.png" /> */}
+        <motion.img
           className="myImage"
           src="../images/my-img.png"
           alt="My Image"
@@ -104,7 +106,7 @@ function Hero() {
             scale: 1.05,
           }}
           transition={{ duration: 0.3 }}
-          />
+        />
       </div>
 
       <div className="scroll-indicator">
@@ -195,40 +197,40 @@ function About() {
 
 
 function Projects() {
-const projects = [
-  {
-    number: "01",
-    title: "The Startio",
-    description: "Launch and Grow Your Business with Confidence",
-    technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
-    image: "../images/startio.jpg",
-    link: "https://www.thestartio.com/",
-  },
-  {
-    number: "02",
-    title: "Honest Jaggery",
-    description: "To preserve the purity of food as nature intended.",
-    technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP"],
-    image: "../images/honest-jag.jpg",
-    link: "https://www.honestjaggery.com/",
-  },
-  {
-    number: "03",
-    title: "Zorsaa Exports",
-    description: "From Indian Expertise to Global Table",
-    technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
-    image: "../images/zorsaa.jpg",
-    link: "https://zorsaaexports.com/",
-  },
-  {
-    number: "04",
-    title: "Midland Foods & Packaging Limited",
-    description: "Leading UK Food Packaging & Beverage Logistics",
-    technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
-    image: "../images/mid-land.jpg",
-    link: "https://midlandsfoodandpackaginglimited.com/",
-  },
-];
+  const projects = [
+    {
+      number: "01",
+      title: "The Startio",
+      description: "Launch and Grow Your Business with Confidence",
+      technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
+      image: "../images/startio.jpg",
+      link: "https://www.thestartio.com/",
+    },
+    {
+      number: "02",
+      title: "Honest Jaggery",
+      description: "To preserve the purity of food as nature intended.",
+      technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP"],
+      image: "../images/honest-jag.jpg",
+      link: "https://www.honestjaggery.com/",
+    },
+    {
+      number: "03",
+      title: "Zorsaa Exports",
+      description: "From Indian Expertise to Global Table",
+      technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
+      image: "../images/zorsaa.jpg",
+      link: "https://zorsaaexports.com/",
+    },
+    {
+      number: "04",
+      title: "Midland Foods & Packaging Limited",
+      description: "Leading UK Food Packaging & Beverage Logistics",
+      technologies: ["HTML", "CSS", "BOOTSTRAP", "PHP", "ANTIGRAVITY"],
+      image: "../images/mid-land.jpg",
+      link: "https://midlandsfoodandpackaginglimited.com/",
+    },
+  ];
 
 
   return (
@@ -253,52 +255,52 @@ const projects = [
 
 
         <div className="projects-grid">
-  {projects.map((project) => (
-    <article
-      className="project-card"
-      key={project.number}
-    >
-      {/* Project Image */}
-      <div className="project-image-wrap">
-        <img
-          src={project.image}
-          alt={`${project.title} preview`}
-          className="project-image"
-          loading="lazy"
-        />
-        <span className="image-label">
-          FEATURED PROJECT
-        </span>
-      </div>
+          {projects.map((project) => (
+            <article
+              className="project-card"
+              key={project.number}
+            >
+              {/* Project Image */}
+              <div className="project-image-wrap">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  className="project-image"
+                  loading="lazy"
+                />
+                <span className="image-label">
+                  FEATURED PROJECT
+                </span>
+              </div>
 
-      <div className="project-top">
-        <span className="project-number">
-          / {project.number}
-        </span>
+              <div className="project-top">
+                <span className="project-number">
+                  / {project.number}
+                </span>
 
-        <a
-          href={project.link}
-          className="project-open"
-          aria-label={`Open ${project.title}`}
-        >
-          ↗
-        </a>
-      </div>
+                <a
+                  href={project.link}
+                  className="project-open"
+                  aria-label={`Open ${project.title}`}
+                >
+                  ↗
+                </a>
+              </div>
 
-      <div className="project-content">
-        <h3>{project.title}</h3>
+              <div className="project-content">
+                <h3>{project.title}</h3>
 
-        <p>{project.description}</p>
+                <p>{project.description}</p>
 
-        <div className="project-tags">
-          {project.technologies.map((tech) => (
-            <span key={tech}>{tech}</span>
+                <div className="project-tags">
+                  {project.technologies.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
           ))}
         </div>
-      </div>
-    </article>
-  ))}
-</div>
 
       </div>
     </section>
@@ -313,9 +315,9 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [state, handleSubmit] = useForm("xvkzdzke");
   if (state.succeeded) {
-      return <p className="thanks-txt">Thanks for joining!</p>;
+    return <p className="thanks-txt">Thanks for joining!</p>;
   }
-  
+
 
   // function handleSubmit(event) {
   //   event.preventDefault();
@@ -358,11 +360,11 @@ function Contact() {
               required
             />
 
-             <ValidationError 
-             prefix="Name" 
-             field="name"
-             errors={state.errors}
-            /> 
+            <ValidationError
+              prefix="Name"
+              field="name"
+              errors={state.errors}
+            />
           </div>
 
           <div className="contact-field">
@@ -376,11 +378,11 @@ function Contact() {
               // onChange={(event) => setEmail(event.target.value)}
               required
             />
-            <ValidationError 
-             prefix="Email" 
-             field="email"
-             errors={state.errors}
-            /> 
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </div>
 
           <div className="contact-field">
@@ -395,11 +397,11 @@ function Contact() {
               required
             />
 
-             <ValidationError 
-             prefix="Message" 
-             field="message"
-             errors={state.errors}
-            /> 
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </div>
 
           <button className="contact-submit" type="submit" disabled={state.submitting}>
@@ -461,6 +463,7 @@ function App() {
       <Cursor />
       <Navbar />
       <Hero />
+      <Skills />
       <About />
       <Services />
       <Projects />
