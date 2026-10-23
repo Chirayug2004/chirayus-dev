@@ -16,7 +16,7 @@ function Skills() {
             Name: "BOOTSTRAP"
         },
         {
-            Image: "./image/react.png",
+            Image: "./images/react.png",
             Name: "REACT JS"
         }
     ]
