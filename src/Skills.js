@@ -4,19 +4,19 @@ function Skills() {
 
     const skills = [
         {
-            Image: "../images/html.png",
+            Image: "./images/html.png",
             Name: "HTML"
         },
         {
-            Image: "../images/css.png",
+            Image: "./images/css.png",
             Name: "CSS"
         },
         {
-            Image: "../images/bootstrap.png",
+            Image: "./images/bootstrap.png",
             Name: "BOOTSTRAP"
         },
         {
-            Image: "../image/react.png",
+            Image: "./image/react.png",
             Name: "REACT JS"
         }
     ]
