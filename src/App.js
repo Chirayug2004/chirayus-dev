@@ -1,17 +1,20 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "motion/react";
 import "../src/App.css"
 import "../src/styles.css"
 import "../src/skills.css"
+import "../src/ThemeSwitch.css"
 import Cursor from "./cursor";
 import Chatbot from "./Chatbot";
 import Services from "./Services";
 import Skills from "./Skills";
+import LoaderText from "./LoaderText";
 
 
-function Navbar() {
+function Navbar({ darkMode, toggleTheme }) {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   function closeMenu() {
@@ -39,6 +42,17 @@ function Navbar() {
         <a href="#projects" onClick={closeMenu}>Projects</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
       </div>
+
+
+      {/* <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
+      >
+        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      </button> */}
+
+      {/* <ThemeSwitch /> */}
 
       <a href="mailto:hello@example.com" className="nav-cta">
         Let's Talk <span>↗</span>
@@ -457,19 +471,59 @@ function Footer() {
 }
 
 function App() {
+
+  // const [darkMode, setDarkMode] = useState(() => {
+  //   return localStorage.getItem("portfolio-theme") !== "light";
+  // });
+
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     "portfolio-theme",
+  //     darkMode ? "dark" : "light"
+  //   );
+  // }, [darkMode]);
+
+  // const toggleTheme = () => {
+  //   setDarkMode((prevMode) => !prevMode);
+  // };
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+
   return (
-    <div className="portfolio">
-      <Chatbot />
-      <Cursor />
-      <Navbar />
-      <Hero />
-      <Skills />
-      <About />
-      <Services />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    // <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`} id="portfolio" >
+    <div className="portfolio" id="portfolio" >
+      {
+        loading ? (
+          <div className="loading-scr">
+            <LoaderText />
+          </div>
+        ) : (
+          <div>
+            <Chatbot />
+            <Cursor />
+            <Navbar
+            // darkMode={darkMode}
+            // toggleTheme={toggleTheme}
+            />
+            <Hero />
+            <Skills />
+            <About />
+            <Services />
+            <Projects />
+            <Contact />
+            <Footer />
+          </div>
+        )
+      }
+
+    </ div>
   );
 }
 
