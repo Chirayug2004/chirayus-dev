@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import "../src/App.css"
 import "../src/styles.css"
 import "../src/skills.css"
-import "../src/ThemeSwitch.css"
+// import "../src/ThemeSwitch.css"
 import Cursor from "./cursor";
 import Chatbot from "./Chatbot";
 import Services from "./Services";
