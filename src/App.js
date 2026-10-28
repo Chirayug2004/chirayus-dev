@@ -349,7 +349,7 @@ function Game() {
     setAttempts(attempts + 1);
 
     if (number === secretNumber) {
-      setMessage("Correct Answer 🎉 !");
+      setMessage("Correct Answer 🎉");
     }
     else if (number < secretNumber) {
       setMessage("📉 Too low! Try a bigger number.");
@@ -376,7 +376,7 @@ function Game() {
             <h2>The Number</h2>
           </div>
           <div className="text-center mt-3" style={{ display: 'flex', justifyContent: 'center' }}>
-            <img src="../images/dice.png" className="img-fluid" width={50} />
+            <img src="../images/dice.png" className="img-fluid" width={200} />
           </div>
         </div>
         <div className="col-lg-6">
