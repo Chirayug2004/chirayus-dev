@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { useForm, ValidationError } from '@formspree/react';
-import { motion } from "motion/react";
+import { motion, number } from "motion/react";
 import "../src/App.css"
 import "../src/styles.css"
 import "../src/skills.css"
+import "../src/game.css"
 // import "../src/ThemeSwitch.css"
 import Cursor from "./cursor";
 import Chatbot from "./Chatbot";
@@ -54,8 +55,12 @@ function Navbar({ darkMode, toggleTheme }) {
 
       {/* <ThemeSwitch /> */}
 
-      <a href="mailto:hello@example.com" className="nav-cta">
+      {/* <a href="mailto:hello@example.com" className="nav-cta">
         Let's Talk <span>↗</span>
+      </a> */}
+
+      <a href={<Game />} className="nav-cta">
+        Explore Games<span>↗</span>
       </a>
     </nav>
   );
@@ -321,6 +326,92 @@ function Projects() {
   );
 }
 
+function Game() {
+  const [secretNumber, setSecretNumber] = useState(
+    () => Math.floor(Math.random() * 10) + 1
+  );
+
+  const [guess, setGuess] = useState("");
+  const [attempts, setAttempts] = useState(0);
+  const [message, setMessage] = useState("");
+
+  function checkGuess() {
+
+    const number = Number(guess);
+
+    if (guess === "" || number < 1 || number > 10 ||
+      !Number.isInteger(number)) {
+      setMessage("Enter a number from 1 to 10!");
+      return;
+    }
+
+
+    setAttempts(attempts + 1);
+
+    if (number === secretNumber) {
+      setMessage("Correct Answer 🎉 !");
+    }
+    else if (number < secretNumber) {
+      setMessage("📉 Too low! Try a bigger number.");
+    }
+    else {
+      setMessage("📈 Too High! Try a Lower number.");
+    }
+
+  }
+
+
+  function restartGame() {
+    setSecretNumber(Math.floor(Math.random() * 10) + 1);
+    setMessage("");
+    setAttempts(0);
+  }
+
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="gameText">
+            <h1>Guess !</h1>
+            <h2>The Number</h2>
+          </div>
+          <div className="text-center mt-3" style={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="../images/dice.png" className="img-fluid" width={50} />
+          </div>
+        </div>
+        <div className="col-lg-6">
+          <div className="game">
+            <h1>Guess the Number 🎯</h1>
+
+            <p>Guess a number between 1 and 10.</p>
+
+            <input
+              type="number"
+              min="1"
+              max="10"
+              value={guess}
+              onChange={(e) => setGuess(e.target.value)}
+              placeholder="Enter your guess"
+            />
+
+            <button onClick={checkGuess}>
+              Check Guess
+            </button>
+
+            <h4>{message}</h4>
+
+            <p>Attempts: {attempts}</p>
+
+            <button onClick={restartGame}>
+              Restart Game
+            </button>
+          </div>
+        </div>
+      </div>
+    </div >
+  )
+}
+
 
 function Contact() {
   const [name, setName] = useState("");
@@ -492,7 +583,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 3000);
   }, []);
 
 
@@ -517,6 +608,7 @@ function App() {
             <About />
             <Services />
             <Projects />
+            <Game />
             <Contact />
             <Footer />
           </div>
